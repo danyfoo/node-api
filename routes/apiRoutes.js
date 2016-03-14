@@ -1,6 +1,9 @@
 /**
  * Created by danyfu on 3/13/16.
  */
+//Importing the models
+var User = require('../models/users');
+
 module.exports = function (app, express) {
     "use strict";
     var apiRouter = express.Router();

@@ -9,4 +9,6 @@ module.exports = function(app, express){
     basicRouter.get('/', function(req, res){
         res.send('Welcome to the homepage!');
     });
+
+    return basicRouter;
 };

@@ -9,6 +9,9 @@ var express = require('express'),
 
 var port = process.env.PORT || 8080;
 
+//Conection URI to the mongodb database
+mongoose.connect('mongodb://localhost:27017/demo');
+
 //APP ROUTERS
 var apiRouter = require('./routes/apiRoutes')(app, express);
 var basicRouter = require('./routes/basicRoutes')(app, express);
@@ -28,7 +31,7 @@ app.use(function(req, res, next){
 });
 
 //log all request to console
-app.use(morgan('dev'));
+//app.use(morgan('dev'));
 
 //SET ROUTERS TO APP
 app.use('/', basicRouter);

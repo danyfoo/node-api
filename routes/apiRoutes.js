@@ -20,6 +20,7 @@ module.exports = function (app, express) {
     //Routes for Users
     apiRouter.route('/users')
         //create a user
-        .post(userCtrl.addUser);
+        .post(userCtrl.addUser)
+        .get(userCtrl.findAllUsers);
     return apiRouter;
 };

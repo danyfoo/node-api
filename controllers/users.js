@@ -2,7 +2,7 @@
  * Created by danyfu on 3/13/16.
  */
 var User = require('../models/users');
-exports.addUser = function(req, res, next){
+exports.addUser = function (req, res, next) {
     "use strict";
     // create a new instance of the User model
     var user = new User({
@@ -13,10 +13,10 @@ exports.addUser = function(req, res, next){
     });
 
     //Save the user and check for errors
-    user.save(function(err){
-        if(err){
+    user.save(function (err) {
+        if (err) {
             //duplicate entry
-            if(err.code == 11000){
+            if (err.code == 11000) {
                 return res.json({
                     success: false,
                     message: 'A user with that username alredy exists.'
@@ -26,7 +26,17 @@ exports.addUser = function(req, res, next){
             }
 
         } else {
-            res.json({message:'User created!'});
+            res.json({message: 'User created!'});
         }
+    });
+};
+
+exports.findAllUsers = function (req, res, next) {
+    "use strict";
+    User.find(function(err, users){
+       if(err) res.send(err);
+
+        //return the users
+        res.json(users);
     });
 };

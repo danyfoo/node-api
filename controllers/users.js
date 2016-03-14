@@ -66,12 +66,12 @@ exports.updateUser = function (req, res) {
         //save the new information for that user
         user.save(function(err){
            if(err){
+               //It fails to save it we send a message of the error
                res.send(err);
            } else {
+               //return a message that the user updated correctly
                res.json({ message: 'User updated' });
            }
         });
-        //return that user
-        res.json(user);
     });
 };

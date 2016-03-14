@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5451e895-27e0-4303-bafd-0c61ba237e20" name="Default" comment="Added Api Routes for Add User and Get All Users">
+    <list default="true" id="5451e895-27e0-4303-bafd-0c61ba237e20" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/users.js" afterPath="$PROJECT_DIR$/controllers/users.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/apiRoutes.js" afterPath="$PROJECT_DIR$/routes/apiRoutes.js" />
     </list>
     <ignored path="node-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -333,7 +331,13 @@
       <option name="project" value="LOCAL" />
       <updated>1457931451555</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added Api Routes for Add User and Get All Users">
+      <created>1457931874168</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1457931874168</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">

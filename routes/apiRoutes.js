@@ -27,6 +27,7 @@ module.exports = function (app, express) {
     //Routes for unique User
     apiRouter.route('/users/:user_id')
         //get an user with specific id
-        .get(userCtrl.findUserById);
+        .get(userCtrl.findUserById)
+        .put();
     return apiRouter;
 };

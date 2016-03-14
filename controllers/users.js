@@ -19,7 +19,7 @@ exports.addUser = function (req, res) {
             if (err.code == 11000) {
                 return res.json({
                     success: false,
-                    message: 'A user with that username alredy exists.'
+                    message: 'A user with that username already exists.'
                 });
             } else {
                 return res.send(err);
@@ -47,6 +47,30 @@ exports.findUserById = function (req, res) {
     User.findById(req.params.user_id, function(err, user){
         if(err) res.send(err);
 
+        //return that user
+        res.json(user);
+    });
+};
+
+exports.updateUser = function (req, res) {
+    "use strict";
+    //Update the information of a User with that id
+    User.findById(req.params.user_id, function(err, user){
+        if(err) res.send(err);
+
+        //update the users info if its new
+        if(req.body.name) user.name = req.body.name;
+        if(req.body.username) user.username = req.body.username;
+        if(req.body.password) user.password = req.body.password;
+
+        //save the new information for that user
+        user.save(function(err){
+           if(err){
+               res.send(err);
+           } else {
+               res.json({ message: 'User updated' });
+           }
+        });
         //return that user
         res.json(user);
     });

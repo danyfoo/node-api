@@ -2,7 +2,7 @@
  * Created by danyfu on 3/13/16.
  */
 var User = require('../models/users');
-exports.addUser = function (req, res, next) {
+exports.addUser = function (req, res) {
     "use strict";
     // create a new instance of the User model
     var user = new User({
@@ -31,12 +31,23 @@ exports.addUser = function (req, res, next) {
     });
 };
 
-exports.findAllUsers = function (req, res, next) {
+exports.findAllUsers = function (req, res) {
     "use strict";
     User.find(function(err, users){
        if(err) res.send(err);
 
         //return the users
         res.json(users);
+    });
+};
+
+exports.findUserById = function (req, res) {
+    "use strict";
+    //Get the User with that id
+    User.findById(req.params.user_id, function(err, user){
+        if(err) res.send(err);
+
+        //return that user
+        res.json(user);
     });
 };

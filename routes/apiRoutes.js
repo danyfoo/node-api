@@ -21,6 +21,12 @@ module.exports = function (app, express) {
     apiRouter.route('/users')
         //create a user
         .post(userCtrl.addUser)
+        //get all users
         .get(userCtrl.findAllUsers);
+
+    //Routes for unique User
+    apiRouter.route('/users/:user_id')
+        //get an user with specific id
+        .get(userCtrl.findUserById);
     return apiRouter;
 };

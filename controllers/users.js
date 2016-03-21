@@ -75,3 +75,7 @@ exports.updateUser = function (req, res) {
         });
     });
 };
+
+exports.getUserInformation = function(req, res){
+    res.send(req.decoded);
+};
